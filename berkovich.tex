@@ -5,16 +5,17 @@
 
 \usepackage{amsmath,amssymb}
 \usepackage{amsthm,thmtools}
-\declaretheorem{theorem}
-\declaretheorem{proposition}
-\declaretheorem{lemma}
-\declaretheorem{definition}
-\declaretheorem[style=remark]{remark}
-\declaretheorem[style=remark]{exercise}
-\declaretheorem[style=remark]{idea}
-\declaretheorem{conjecture}
-\declaretheorem{notation}
-\declaretheorem{example}
+\numberwithin{equation}{section}
+\declaretheorem[sibling=equation]{theorem}
+\declaretheorem[sibling=equation]{proposition}
+\declaretheorem[sibling=equation]{lemma}
+\declaretheorem[sibling=equation]{definition}
+\declaretheorem[sibling=equation,style=remark]{remark}
+\declaretheorem[sibling=equation,style=remark]{exercise}
+\declaretheorem[sibling=equation,style=remark]{idea}
+\declaretheorem[sibling=equation]{conjecture}
+\declaretheorem[sibling=equation]{notation}
+\declaretheorem[sibling=equation]{example}
 
 \usepackage{enumitem}
 
