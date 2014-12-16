@@ -2,4 +2,90 @@
 
 \subsection{Minimal models}
 
-A regular model
+A regular/nc/snc model $\mathfrak{X}$ of $X$ is called \emph{relatively
+minimal} if every morphism of regular models $\mathfrak{X} \to \mathfrak{Y}$ is
+an isomorphism. It is called \emph{minimal} if for all regular models
+$\mathfrak{Y}$ there is a unique morphism of models $\mathfrak{Y} \to
+\mathfrak{X}$.
+\begin{example}
+	$\mathbb{P}^{1}_{R}$ is a relatively minimal regular (even snc) model
+	of $\mathbb{P}^{1}_{K}$, but it is \emph{not} minimal. The morphism
+	$\phi \colon \mathbb{P}^{1}_{K} \to \mathbb{P}^{1}_{K}, (x : y) \mapsto
+	(x : ty)$ does not extend to a morphism $\mathbb{P}^{1}_{R} \to
+	\mathbb{P}^{1}_{R}$. So there does not exist morphism of regular models
+	$\mathfrak{X} \to \mathbb{P}^{1}_{R}$, where $\mathfrak{X}$ is the
+	model $\mathfrak{X} = \mathbb{P}^{1}_{R}$, $\mathfrak{X}_{K}
+	\stackrel{\phi^{-1}}{\longrightarrow} \mathbb{P}^{1}_{K}$.
+
+	However, one can show that $\mathfrak{X} = \mathbb{P}^{1}_{R}$ for
+	\emph{every} relatively minimal regular model $\mathfrak{X}$.
+\end{example}
+
+\begin{proposition}
+	$X$ always has a relatively minimal regular/nc/snc model.
+	\begin{proof}
+		Let $\mathfrak{X}$ be any regular/nc/snc model. If it is not
+		relatively minimal, there is a map $\mathfrak{X} \to
+		\mathfrak{Y}$ that is not an isomorphism. Such a map contracts
+		a curve in the special fibre; but there are only finitely many
+		of such curves.
+	\end{proof}
+\end{proposition}
+
+\subsection{Important tools}
+
+Any two regular/nc/snc can be dominated by a third such model.
+
+\begin{theorem}[Factorisation theorem, Lichtenbaum, 1968]
+	Every morphism of regular models is a finite composition of blow-ups at
+	points centered in the special fibre.
+\end{theorem}
+
+\begin{theorem}[Castelnuovo's criterion, Lichtenbaum, 1968]
+	Let $\mathfrak{X}$ be a regular model of $X$. Let $E$ be a vertical
+	prime divisor on $X$. Then there exists a morpism of regular models $h
+	\colon \mathfrak{X} \to \mathfrak{Y}$ such that $h(E) = \{y\}$ ($y$ a
+	closed point) and such that $h$ is an isomorphism outside $E$ if and
+	only if $E \cong \mathbb{P}^{1}_{k}$ and $(E \cdot E) = -1$. In that
+	case, $h$ is the blow-up of $\mathfrak{Y}$ at $y$ and $E$ is called
+	\emph{exceptional} on $\mathfrak{X}$.
+\end{theorem}
+
+\begin{exercise}
+	If $g(X) \ge 1$, then $X$ has a (automatically unique) minimal
+	regular/nc/snc model.
+	\begin{solution}
+		TODO
+	\end{solution}
+\end{exercise}
+
+\subsection{Dual graph of an nc-model}
+
+Let $\mathfrak{X}$ be any nc-model of $X$. Then the combinatorial properties of
+$\mathfrak{X}_{k}$ are encoded in the \emph{dual graph}
+$\Gamma(\mathfrak{X}_{k})$ of $\mathfrak{X}_{k}$. Write $\mathfrak{X}_{k}$ as
+sum $\sum_{i \in I}N_{i}E_{i}$ of its irreducible components. Then
+$\Gamma(\mathfrak{X}_{k})$ is a finite graph with vertices $\{ v_{i} | i \in I
+\}$.
+\begin{align*}
+	\{\text{vertices } v_{i}\} &\longleftrightarrow \{ \text{irred. comps. of $\mathfrak{X}_{k}$} \} \\
+	\{\text{loops at } v_{i}\} &\longleftrightarrow \{ \text{self-intersections of $E_{i}$} \} \\
+	\{\text{edges} \} &\longleftrightarrow \{ \text{intersection points} \}
+\end{align*}
+TODO: picture of the construction.
+
+We label each vertex $v_{i}$ with the additional data $(N_{i}, p_{\textrm{a}}(E_{i}))$.
+
+It is natural to ask which graphs can occur as dual graphs. There is one
+immediate obstruction, which follows from the observation that for all $i \in
+I$:
+\begin{align*}
+	(\sum_{j \in I} N_{j}E_{j} \cdot E_{i}) &= 0 &&\text{by linear equivalence} \\
+	&= \sum_{j \in I} N_{j} (E_{j} \cdot E_{i}) \\
+	&= \sum_{j \ne i} N_{j} \underbrace{(E_{j} \cdot E_{i})}_{\parbox{4.5em}{\tiny \centering number of edges between $v_{i}$ and $v_{j}$}} + N_{i}(E_{i} \cdot E_{i})
+\end{align*}
+Consequently $\sum_{j \ne i} N_{j} (E_{j} \cdot E_{i})$ should be divisible by $N_{i}$.
+\begin{theorem}[Winters]
+	If for all $i \in I$, the sum $\sum_{j \ne i} N_{j} (E_{j} \cdot E_{i})$ is divisible by $N_{i}$, and $\gcd(N_{i}, i \in I) = 1$; then $\Gamma$ is a dual graph of an nc-model of a smooth projective geometrically connected curve $X$.
+\end{theorem}
+
