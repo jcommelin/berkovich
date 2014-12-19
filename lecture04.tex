@@ -1,0 +1,67 @@
+\section{The semistable reduction theorem (Lecture 4)}
+
+\noindent {\bfseries Recall} An nc-model for $X$ is called semistable if the special fibre is reduced.
+
+\begin{definition} We say that $X$ has semistable reduction if it has a semistable nc-model. In that case, every relatively minimal nc-model will be semi-stable. \end{definition}
+\begin{exercise} Prove the last statement. \end{exercise}
+
+\noindent These models play an important role in the study of moduli spaces of curves (cf. Deligne--Mumford).
+
+\begin{remark} An important feature is that it is easy to understand the behaviour of semistable nc-models under base change:
+
+Let $\mathcal{X}$ be a semistable nc-model of $X$. Consider singular points of $\mathcal{X}_k$. I.e., let components $E_1$ and $E_2$ meet in a node, parametrised by the equation $xy=t$, for $t$ a uniformiser in $R$. Let $K'/K$ be a finite field extension of degree $d$ and let $R'$ be an integral closure of $F$ in $K'$; then $R'$ is again a complete discrete valuation ring. Now consider
+\[
+\mathcal{X}' = \mathcal{X} \times_R R'.
+\]
+This $\mathcal{X}'$ is no longer semistable: so-called $A_d$-{\emph singularities} appear. These are points where components $E_1$ and $E_2$ meet in a singular point parametrised by $x'y' = (t')^d$, where $t'$ is a uniformiser in $R'$.
+
+%TO DO: Include pictures of the nodes in $\mathcal{X}_{k}$ and $\mathcal{X}'_k$ respectively.
+{\bfseries N.B.} The extension $K'/K$ is totally ramified since we have assumed that $k$ is algebraically closed.
+
+There is a minimal resolution of the $A_d$-singularieties, which will yield a new nc-model: Between $E_1$ and $E_2$ we introduce a chain of $d$ rational curves. On the level of dual graphs, this means that the edge between $v_1$ and $v_2$ (corresponding to $E_1$ and $E_2$ respectively) is subdivided into $d$ edges.
+%TO DO: Include picture of a chain of d rational curves between components E_1 and E_2, and a dual picture of the graph with subdivided egde.
+\end{remark}
+
+\begin{theorem}[Semistable Reduction Theorem, Deligne--Mumford/Artin--Winters/Saito]
+There exists a finite separable extension $K'/K$ such that $X \times_K K'$ has semistable reduction. More precisely, if $g(X) \neq 1$ or $X$ is an elliptic curve, then $X$ has semistable reduction if and onlly if the action of $\mathrm{Gal}(K^{\mathrm{sep}}/K)$ on $H^1(X\times_K K^{\mathrm{sep}},\mathbb{Q}_{\ell})$ is unipotent, i.e., has all eigenvalues equal to $1$.\end{theorem}
+
+\begin{proof} The proof is elementary if $X$ has an nc-model $\mathcal{X}$ such that $\chr(k)$ does not divide the multiplicity of any component in $\mathcal{X}_k$.
+
+A component $E$ of $\mathcal{X}_k$ is called \emph{principal} if $g(E) \geq 1$, or $E$ intersects the other components in at least $3$ points. (I.e., the components which are not principal are $\mathbb{P}^1$'s meeting in at least $3$ points.)
+
+Let $$e = \mathrm{lcm}\{N_i \colon i \in I, E_i \textrm{  principal}\}$$ and write $$\mathcal{X}_k = \sum_{i \in I}N_iE_i.$$ Let $K'$ be the unique degree $e$ extension of $k$ in $K^{\mathrm{sep}}$, i.e., $K' = K(\sqrt[e]{t})$ where $t$ is a uniformiser in $R$. Let $R'$ again denote the integral closure of $R$ in $K'$.
+
+For the normalisation $\widetilde{\mathcal{X} \times_R R'}$, which has only $\ZZ/e\ZZ$-quotient singularities by assumption. Its minimal resolution $\mathcal{Y}$ is an snc-model of $X \times_K K'$ but need not be semistable. When we contract its exceptional curves, we \emph{do} obtain a relatively minimal scn-model, $\mathcal{Y}'$ say, which is semistable.
+\[
+\xymatrix{
+\widetilde{\mathcal{X}\times_R R'} \ar[d]_{\mathrm{normalisation}} & \ar[l]^{\mathrm{min. res.}} \mathcal{Y} \ar[d]^{\textrm{contract exceptional curves}} \\
+\mathcal{X} & \mathcal{Y}' 
+}
+\]
+If $\mathcal{X}$ is minimal, then $e$ is the degree of the smallest extension $K'$ such that $X \times_K K'$ has semistable reduction.
+
+This strategy fails in general! Wild quotient singularities may appear on $\widetilde{\mathcal{X} \times_R R'}$. There is no general formula to compare the degree of the minimal extension giving a semi-stable reduction.
+
+Note also that this theorem and its proof make heavy use of the fact that we are dealing with curves.
+\end{proof}
+
+\section*{Canonical divisor and adjunction formula}
+Let $\mathcal{X}$ be a regular model of $X$. Write $\omega_{X/K} = \Omega^1_{X/K}$ for the canonical line bundle. This line bundle has a canonical extension to a line bundle on $\mathcal{X}$, called the \emph{relative canonical line bundle} $\omega_{\mathcal{X}/R}$. It is constructed (cf. Liu, "Algebraic Geometry and Arithmetic Curves") as $$\omega_{\mathcal{X}/R} = \mathrm{det}\Omega^1_{\mathcal{X}/R},$$ where $\mathrm{det}$ is the maximal exterior power of any locally free sheaf.
+
+\noindent {\bfseries Why is the relative canonical line bundle important?}
+\begin{enumerate}
+\item $\omega_{\mathcal{X}/R}$ is a dualising sheaf, used in Grothendieck-Serre duality.
+\item We have the {\bfseries Adjunction Formula}: $$\omega_{\mathcal{X}/R}|_X \cong \omega_{X/K}.$$ If $E$ is a prime component in $\mathcal{X}_k$ (i.e. one of the $E_i$ in $\mathcal{X}_k = \sum_{i} N_iE_i$), then $$\omega_{\mathcal{X}/R}(E)|_E \cong \omega_{E/k}.$$ Since $\omega_{E/k}$ has degree $2p_a(E) -2$, taking degrees on both sides yields $$p_a(E) = 1 + \frac{1}{2}((K_{\mathcal{X}/R} + E)\cdot E),$$ where $K_{\mathcal{X}/R}$ is any divisor associated with $\omega_{\mathcal{X}/R}$.
+\end{enumerate}
+
+\section*{A combinatorial toolbox}
+Let $\mathcal{X}$ be an snc-model of $X$ and write $\mathcal{X}_k = \sum_{i \in I} N_i E_i$. We have the invariants $$\kappa_i = -(E_i \cdot E_i)$$ and $$\nu_i = (K_{\mathcal{X}/k}\cdot E_i).$$ %Should the k be an R??
+These satisfy three fundamental relations:
+\begin{enumerate}
+\item $$\sum_{i \in I} N_i (E_i \cdot E_j) = 0$$ for all $j \in I$. This allows us to compute the $K_j$ on $\Gamma(\mathcal{X}_k)$.
+\item (Adjunction Formula) $$2g(E_i)-2 = \nu_i - \kappa_i$$ for all $i \in I$. Note that here $g = p_a$, since all components are regular. This relations allows us to compute the $\nu_i$ on $\Gamma(\mathcal{X}_k)$.
+\item $$2g(X)-2 = \mathrm{deg}\omega_{X/K} = (\omega_{\mathcal{X}/R} \cdot \mathcal{X}_k) = \sum_{i \in I} N_i \nu_i.$$ This allows us to compute the genus $g(X)$ on $\Gamma(\mathcal{X}_k)$. Note that only the horizontal part of $\omega_{\mathcal{X}/R}$ contributes.
+\end{enumerate}
+
+\begin{exercise} Write the adjunction formula in terms of $\Gamma(\mathcal{X}_k)$ if $\mathcal{X}$ is semistable. \end{exercise}
+
