@@ -80,12 +80,25 @@ It is natural to ask which graphs can occur as dual graphs. There is one
 immediate obstruction, which follows from the observation that for all $i \in
 I$:
 \begin{align*}
-	0 &= (\sum_{j \in I} N_{j}E_{j} \cdot E_{i}) &&\text{by linear equivalence} \\
+	0 &= \big(\sum_{j \in I} N_{j}E_{j} \cdot E_{i}\big) &&\text{by linear equivalence} \\
 	&= \sum_{j \in I} N_{j} (E_{j} \cdot E_{i}) \\
 	&= \sum_{j \ne i} N_{j} \underbrace{(E_{j} \cdot E_{i})}_{\parbox{4.5em}{\tiny \centering number of edges between $v_{i}$ and $v_{j}$}} + N_{i}(E_{i} \cdot E_{i})
 \end{align*}
 Consequently $\sum_{j \ne i} N_{j} (E_{j} \cdot E_{i})$ should be divisible by $N_{i}$.
 \begin{theorem}[Winters]
-	If for all $i \in I$, the sum $\sum_{j \ne i} N_{j} (E_{j} \cdot E_{i})$ is divisible by $N_{i}$, and $\gcd(N_{i}, i \in I) = 1$; then $\Gamma$ is a dual graph of an nc-model of a smooth projective geometrically connected curve $X$.
-\end{theorem}
+	If for all $i \in I$, the sum $\sum_{j \ne i} N_{j} (E_{j} \cdot
+	E_{i})$ is divisible by $N_{i}$, and $\gcd(N_{i}, i \in I) = 1$; then
+	$\Gamma$ is a dual graph of an nc-model of a smooth projective
+	geometrically connected curve $X$.
 
+	The genera of the components $E_i$ can be chosen freely, modulo two
+	conditions:
+	\begin{itemize}
+		\item the geometric genus $g$ satisfies $g \geq 0$,
+		\item the arithmetic genus $p_a$ satisfies
+			\[
+				p_a \geq \#\{\text{self-intersection points}\}
+				= \#\{\text{loops at a vertex}\}.
+			\]
+	\end{itemize}
+\end{theorem}
