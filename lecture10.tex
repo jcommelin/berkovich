@@ -1,0 +1,82 @@
+\section{Lecture 10: Behaviour of the specialization map under change of models}
+As we have seen before, for any curve there are several strict crossing models. In this lecture we study how the specialisation  $\Sp_\scheme:X^{an}\to\scheme_k$ and the skeleton $\Sk(\scheme)$ depend on these models. Let $h:\scheme'\to\scheme$ be the blow up at a closed point $x$ of $\scheme_k$, where the following diagram commutes. 
+
+\hspace{5cm}\xymatrix{X^{an}\ar[r]^{\Sp_{\scheme'}}\ar[rd]_{\Sp_{\scheme}}&\scheme_k'\ar[d]^{h_k}\\ & \scheme_k}
+
+As before we write $\scheme_k=\sum_{i\in I} N_iE_i$, where $I$ is some finite index set and $N_i$ is the multiplicity of the component $E_i$. There are two possibilities, either $x$ is an intersection point of two components $E_i,E_j$ in the special fiber $\scheme_k$, or $x$ lies in the unique component $E_i$ of $\scheme_k$. 
+
+\subsection*{Case 1: Blowing up an intersection point} Let $y\in X^{an}$ be the monomial point associated with $(\scheme,(E_i,E_j),(\alpha_i,\alpha_j),x)$. The exceptional component $E_k=h^{-1}(x)$ is rational curve $\mathbb P^1_k$ and has multiplicity $N_i+N_j$. We denote the intersection point $E_i\cap E_k$ (respectively $E_j\cap E_k$) with $x_i$ (respectively $x_j$). For the local equations we need two charts: $z_k=\frac{z_i}{z_j}$ or $z_k=\frac{z_j}{z_i}$ defined on the locus where $z_j\not=0$ or $z_i\not=0$ respectively. The monomial point $y$ specializes to the point associated with $(\scheme',(E_i,E_k),(\alpha_i-\alpha_j,\alpha_j),x_i)$, if $\alpha_i>\alpha_j$. If $\alpha_j>\alpha_i$ then it specializes similarly to the valuation associated with $x_j$. Finally, if $\alpha_i=\alpha_j$ it specializes to the divisorial point associated with $(\scheme',E_k)$. 
+
+The blowing up construction exactly takes care that $E_k$ intersects $E_i$ and $E_j$, while $E_i$ and $E_j$ don't intersect each other anymore. In the skeleton this means that the edge corresponding to the intersection point $x$ is subdivided, and hence topologically $\Sk(\scheme)=\Sk(\scheme')$. 
+
+\subsection*{Case 2: Blowing up a point in a unique component} We consider the case that we blow up a point $x$ which lies on a unique component $E_i$ of the special fiber of $\scheme$. The exceptional component $h^{-1}(x)$ is again rational curve $E_k$, which intersects $E_i$ in $x'$. The divisorial point associated with $(\scheme',E_k)$ is not monomial with respect to $\scheme$, and none of the monomial points associated with $(\scheme',(E_i,E_k),x')$ is monomial with respect to $\scheme$. It follows that the image of the specialisation $\Sp_\scheme$ of all these points is $x$.
+
+From this discussion we find 
+\xymatrix{\Sk(\scheme')\subset X^{an}\ar[r]^{\rho_{\scheme}}&\Sk(\scheme'),}
+restricted to the skeleton either is, as in case 1, the identity map, or, as in case 2, it leads to the contraction of an leaf-edge to a vertex. Since we can order the strict-normal crossing models of a curve $X$, using the relation of domination we find a canonical mapping:
+\[\varphi:X^{an}\to \varprojlim_{\scheme\text{snc-model of X}}\Sk(\scheme)\]
+
+\begin{theorem}
+The map $\varphi$ described above is a homeomorphism. 
+\end{theorem}
+
+\begin{proof}
+Since $X^{an}$ is a compact space and the skeletons $\Sk(\scheme)$ are compact, we find that the projective limit $\varprojlim \Sk(\scheme)$ is a Hausdorff space. Each of the maps $\rho_\scheme:\Sk(\scheme')\to\Sk(\scheme)$ is continuous, and therefore, it is sufficient to prove that $\varphi$ is bijective. 
+
+\textbf{Surjectivity} The surctivity of $\varphi$ follows from the following observations. First note that for any snc-model $\scheme$, the map $\rho_\scheme\to\Sk(\scheme)$ is surjective, and moreover if $\scheme$ dominate $\scheme$, then transition map $h:\Sk(\scheme')\to\Sk(\scheme)$ is surjective. Combining this with the fact that for each model $\Sk(\scheme)$ is compact. We  find that $\varphi:X^{an}\to \varprojlim\Sk(\scheme)$ is indeed surjevtive.
+
+\textbf{Injectivity} Assume that $x,y\in X^{an}$ have the same image in $\varprojlim\Sk(\scheme)$, that means that for any snc-model $\scheme$ it holds that $\rho_\scheme(x)=\rho_\scheme(y)$. We here only consider the case that $x,y\in X^{div}$, i.e., that they are divisorial points. Our assumption implies for the for any model $\scheme$ the specialization map gives $\Sp_\scheme(x)=\Sp_\scheme(y)$. If $\Sp_\scheme(x)$ is the image of a generic point of a component $E_i$ of $\scheme_k$ if $\rho_\scheme(x)$ is the vertex $v_i$. In the case that $\Sp_\scheme(x)$ is a closed point of $\scheme_k$ we can construct a new snc-model by blowing up $\scheme$ at this point. Note that $\Sp_\scheme'(x)\not=\Sp_\scheme'(y)$, then this would imply that $\rho_\scheme'(x)\not\rho_\scheme'(y)$, which would contradict our assumption. We therefore can finish the proof by using  
+the following classical observation from bi-rational geometry:
+\[\{f\in K(X):|f(x)|<1\}=\bigcup\limits_{\scheme\text{ a snc-model }}\mathcal O_{\scheme,\Sp_\scheme(x)}.\]
+After finitely many blow ups you can reconstruct the norm and hence $x$ is uniquely determined.
+\end{proof}
+
+As an illustration of the whole procedure we look to the following sequence of pictures:
+
+\begin{center}
+\begin{figure}[h]
+%\includegraphics[trim=1cm 2cm 5cm 4cm, clip=true, totalheight=0.3\textheight, angle=270]{drawing1.pdf}
+\caption{ The special fiber of the minimal model of a Tate elliptic curve $X$ over $K$ and the corresponding dual intersection graph. All the components are copies of $\mathbb P^1$. }
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[h]
+%\includegraphics[trim=4cm 1cm 0cm 3cm, clip=true, totalheight=0.3\textheight, angle=90]{drawing2.pdf}
+\caption{ The special fiber of a snc-model of X after we have blown up an intersection point.}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[h]
+%\includegraphics[trim=4cm 1cm 0cm 3cm, clip=true, totalheight=0.3\textheight, angle=90]{drawing3.pdf}
+\caption{ The special fiber of a snc-model of X after we have blown up a smooth point.}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[h]
+%\includegraphics[trim=4cm 1cm 0cm 3cm, clip=true, totalheight=0.3\textheight, angle=90]{drawing4.pdf}
+\caption{Passing to the limit we find the original core of the skeleton together with consecutive infinitely many branches at the components; growing into trees.}
+\end{figure}
+\end{center}
+
+
+
+The branching points of the tree correspond to the divisorial point. In one of the exercises we have seen that these correspond to the point with rational coordinates. The outgoing branches at each component are in one to one correspondence with the points on the corresponding component; in a snc-model any point can be blown up. 
+
+The end points of the tree correspond to one of the following points:
+
+\begin{enumerate}
+ \item closed points of $X$; these are in the literature called \emph{type I} points. 
+ \item if $K$ is not spherically complete, then there exist descreasing sequence of balls which have an empty intersection. In the literature these points are called \emph{type IV} points. 
+\end{enumerate}
+
+The internal point of the tree are 
+
+\begin{enumerate}
+ \item divisorial points, which in the literature are called \emph{type II} points.
+ \item monomial points which are non-divisorial points are called \emph{type III} points.
+\end{enumerate}
+
+

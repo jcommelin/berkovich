@@ -1,4 +1,5 @@
 \documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc} 
 \usepackage[utf8]{inputenc}
 
 \usepackage[english]{babel}
@@ -39,9 +40,29 @@
 \usepackage{graphicx,color}
 \usepackage[all]{xy}
 \xyoption{poly}
-%\usepackage{calrsfs}
-%\usepackage[T1]{fontenc}
-%\usepackage{textcomp}
+
+%Preamble by JK (lec10)
+% fonts
+\usepackage{calrsfs}
+
+\newcommand{\scheme}{\mathcal{X}}
+\DeclareMathOperator{\Sp}{sp}
+\DeclareMathOperator{\Sk}{Sk}
+
+\renewcommand{\tilde}{\widetilde}
+\renewcommand{\bar}{\overline}
+%\DeclareMathOperator{\Stab}{{Stab}}
+%\newcommand{\f}{\varphi}
+
+
+%BEGIN TEMP
+\newcommand{\mynote}[2]{\noindent
+{\bfseries\sffamily\scriptsize#1}
+{\small$\blacktriangleright$\textsf{\textsl{#2}}$\blacktriangleleft$}}
+\newcommand\JK[1]{\mynote{JK}{{\color[rgb]{0,0.2,0.5} #1}}}
+\newcommand\GC[1]{\mynote{GC}{{\color[rgb]{0.5,0.2,0.0} #1}}}
+%END TEMP
+%End preamble by JK (lec10)
 
 \title{Lecture notes on Berkovich skeleta}
 \author{Johannes Nicaise \and Sam Payne}
@@ -61,7 +82,9 @@
 \section{Lecture 7}
 \section{Lecture 8}
 \section{Lecture 9}
-\section{Lecture 10}
+
+\input{lecture10.tex}
+
 \section{Lecture 11}
 \section{Lecture 12}
 \section{Lecture 13}
