@@ -1,0 +1,66 @@
+\section{ Mumford uniformization (Lecture 14)}
+
+\noindent Let $X$ be a smooth projective curve of genus $g$ over $K=\CC((t))$ and let $\mathfrak{X}$ be a regular semistable snc model. Furthermore set $R = \CC[[t]]$. Now $\overline{\mathfrak{X}}$ is a union of $\mathbb{P}^1$ s, so $h^1(G) = g$.
+
+Last time we saw that $\Jac(G)_{\RR} = \Hom(H_1(G),\RR)/H_1(G,\ZZ)$ where $H_1(G,\ZZ)\subset \Hom(H_1(G),\ZZ)\subset \Hom(H_1(G),\RR)$ is induced by $<,>$. We also saw that the maximal torus $T$ in $\overline{\Pic(\mathfrak{X}/R)}$ is equal to the identity component and is $\Hom(H_1(G),\CC^*)$. So $T$ is an algebraic torus with character lattice $M = H_1(G,\ZZ)$. Set $N=M^{\vee}$.
+
+\begin{theorem} (Mumford uniformization) $\Jac(X)^{\an} = T_K^{\an}/H_1(G,\ZZ)$. \end{theorem}
+
+\noindent For each $x\in T(K)$ we can get a map 
+
+\[
+\xymatrix{
+M \ar[r]^{\mathrm{ev}_{x}} & K^*  \ar[r]^{\val} & \RR \\
+}
+\]
+
+which determines a group homomorphism $T(K)\to N_{\RR}$. We can say in some sense that $\Trop(x)\in N_{\RR}$.
+
+\noindent Now if $L|K$ is a valued extension and $y\in T(L)$ we can also get a map
+
+\[
+\xymatrix{
+M \ar[r]^{\mathrm{ev}_{y}} & L^*  \ar[r]^{\mathrm{val}} & \RR \\
+}
+\]
+
+\noindent If $y$ were defined over $K$ we'd get the same map. Using this we get compatible maps $T(L)\to N_{\RR}$ for all valued extensions $L|K$.
+
+\noindent If $Y$ is a variety over $K$, an alternative description of $Y^{\an}$ is the set
+
+$Y^{\an}=\{y\in Y(L)$ for valued extensions $L|K \}$
+
+modulo an equivalence relation: We say that $(y,L)\sim (y',L')$ if there exists a pair $(y'',L'')$ such that $L\subseteq L''$, $L'\subset L''$ and $y''=y\times_{L} L'' = y'\times_L L''$.
+
+\noindent Combining these things we end up with a surjective map $\pi: T^{\an}\twoheadrightarrow N_{\RR}$.
+
+\noindent We also need an injective map $N_{\RR}\hookrightarrow T^{\an}$. 
+
+Given $v\in N_{\RR}$ we want to give a valuation. Define $\val_v(f) = \min_{x\in \pi^{-1}(v)}\val_x(f)$.
+\noindent These are all monomial valuations. Another way of describing the valuation is 
+
+\[\val_v(\sum_{u\in M \text{ finite }}a_{u}X^u) = \min_u\{\val(a_u)+<u,v>\}\]
+
+$\pi^{-1}(0)$ is a compact analytic subgroup of $T^{\an}$ which we call $T_0$. 
+
+$T_0(L) = T(R_L)$
+
+\noindent We can now see that we more or less have that $N_{\RR} = T^{\an}/T_0$. This statement has been made more precise by the following theorem
+
+\begin{theorem} $N_{\RR} = (T^{\an}/T_0)^{\an}$ (Abramovich-Chen-Markus- Wise)/Mulisch ?
+
+\noindent Rough picture. Good analogue of skeleton of a Jacobian.
+
+\end{theorem}
+ 
+\[
+\xymatrix{
+ & T^{\an} \ar@{->>}[r] \ar@{->>}[d]^{/T_0} & \Jac(X)^{\an} \ar[d]^{/T_0} \\
+H_1(G,\ZZ) \ar@{^{(}->}[r] & \Hom(H_1(G),\RR) \ar[r] \ar@{=}[d] & \Jac(G)_{\RR} = N_{\RR}/H_1(G,\ZZ) \\
+ & N_{\RR} = \Sigma(T^{\an}) \ar[r] & \Sigma(\Jac(X)^{\an}) 
+ }
+\]
+
+References: 
+Gubler: Tropicaliztion of analytic spaces (2006?)
+Baker-Rabinoff (2013?)

@@ -1,0 +1,58 @@
+\section{Understanding how line bundles degenerate (Lecture 9)}
+
+Let $A$ be an abelian variety over $K$ and assume $K=\CC((t))$.
+
+\begin{definition} A N\'eron model of $A$ is a smooth and separated $R$-scheme $A_{R}$ with the property that for any smooth and separated $X/R$ and any morphism $X_K\to A_K$ there is a unique extension $X_R\to A_R$. \end{definition}
+
+In particular $A_R(R) = A(K)$
+
+\begin{theorem} A N\'eron model exists and is a commutative group scheme over $R$, N\'eron, Raynaud\end{theorem}
+\begin{proof} See N\'eron models by Bosch, L\"utkebohmert, Raynaud. \end{proof}
+
+\noindent When $A=\Jac(X)$ the special fiber of a N\'eron model is the smooth locus in the special fiber of Caporaso's relative compactified Jacobian. (This represents a "balanced" Picard functor).
+
+We will consider the special case where $X$ is a curve with a regular semistable snc model $\mathfrak{X}$ over $R$. Let $G$ be the dual graph of $\mathfrak{X}$. Our goal will be to understand how line bundles of degree 0 degenerate.
+
+\noindent Maximal torus: the line bundles that are trivial on each component of $\overline{\mathfrak{X}}$.
+
+\[\text{Maximal torus} \subseteq \text{Conn. component of the identity} \subseteq A\twoheadrightarrow \text{Component group}\]
+
+%TODO: image of two tori attached to a sphere and a graph depicting a triangle as its model
+
+\[\text{Line bundles on }\overline{\mathfrak{X}}\text{ trivial on each component} \longleftrightarrow \Hom(\pi_1(G),\CC^*) = \Hom(H_1(G,\ZZ),\CC^*)\]
+
+\[\text{Special fiber of N\'eron model}\to \prod_i \Pic(\overline{\mathfrak{X}_i})\]
+
+\noindent The kernel of 
+
+\[\text{Conn. component of the identity}\to \prod_i \Jac(\overline{\mathfrak{X}_i})\] is the maximal torus of rank = $h^1(G)$.
+
+\noindent The component group of $A_{\CC}$ is the obstruction to extending a line bundle of degree 0 on $X$ to a line bundle of degree 0 on each $\overline{\mathfrak{X}_i}$.
+
+\noindent Obstruction = $\Jac(G)$.
+
+The identification of $\Jac(G)$ with the component group of $A_{\CC}$ induces an inclusion $\Jac(G)\hookrightarrow \Jac(X)^{\an}$.
+
+A component $y$ of $A_{\CC}$ gives rise to a valuation $\ord_y$ on $K(A)$ and since $A_R$ is smooth over $\Spec R$ each component is reduced and $\ord_y$ extends to a valuation on $K$.
+
+%TODO image of a Torus A degenerating into several connected components in A_{\CC}
+
+\[A_K^{\an} = \{(\mathfrak{p},\val)|\mathfrak{p}\in A \text{ and } \val \text{ is a valuation on } \mathcal{K}(\mathfrak{p}) \text{ that extends the valuation on} K.\}\]
+
+\[\Jac(G)\subset \Jac(X)^{\an}\]
+
+To get more information, we can extend the field. Let $L|K$ be a finite extension, so $L = \CC((t^{\frac{1}{n}}))$. This gives rise to a curve $X_L$ and a model $\mathfrak{X}_L$ which is a resolution of $\mathfrak{X}\times_R R_L$. The dual graph of $\overline{\mathfrak{X}_L}$ is $\frac{1}{N}(G)$.
+
+Now build a N\'eron model of $\Jac(X_L)$. The component group of the special fiber is $\Jac(\frac{1}{N}(G)$.
+
+\[
+\xymatrix{
+X_L \ar[d] & \Jac(X_L) \ar[d] \ar@{~>}[r] & \Jac(X_L)_{\CC} \\
+X_K & \Jac(X_K) \ar@{~>}[r] & \Jac(X_K)_{\CC}
+}
+\]
+
+\noindent We can pull rational functions on $\Jac(X_K)$ back  to to $\Jac(X_L)$ and get $\ord_y$ for $y\in\Jac(\frac{1}{N}G$. Now $\frac{1}{N}\ord_y$ extends the valuation on $K$. (We divide by $N$ to remove the ramification). With this we also get that $\Jac(\frac{1}{N})$ is included in $\Jac(X)^{\an}$.
+
+\begin{definition} We define the skeleton $\Sigma(\Jac(X_K)^{\an})$ to be $\overline{\bigcup_N \Jac(\frac{1}{N}G)}$.
+\end{definition}
