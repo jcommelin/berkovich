@@ -1,0 +1,155 @@
+\section{Lecture 8}
+
+We will assume from now on that $X$ is a smooth, proper and geometrically connected curve.
+
+Let $\mathscr{X}$ be an $snc$-model of $X$ over $R$. Then we can use $\mathscr{X}$ to produce an interesting set of
+points in $X^{\mathrm{bir}}\subset X^{\mathrm{an}}$ which we call the divisorial points.
+Here $X^{\mathrm{bir}}$ denotes the set of birational points
+of $X^{\mathrm{an}}$.
+
+Write the special fiber as $\mathscr{X}_{k}=\sum_{i\in I}N_{i}E_{i}$, we consider the valuation
+\[
+  v: \kappa(x)^{*}\rightarrow\mathbb{R}: f\mapsto \frac{1}{N_{i}}\mathrm{ord}_{E_{i}}f
+\]
+such that $v(t)=1$. In fact, this $v$ extends the valuation $v_{K}$ on $K$ and
+gives rise to a point $x\in X^{\mathrm{an}}$ which we call the divisorial point associated with
+$(\mathscr{X},E_{i})$.
+
+\begin{exercise}
+Compute $\mathscr{H}(x)$.
+\end{exercise}
+
+We say that a point of $X^{\mathrm{an}}$ is divisorial if it is the divisorial point associated with some
+$snc$-model $\mathscr{X}$ and some component of $\mathscr{X}_{k}$.
+
+\begin{fact}
+The set of divisorial points in $X^{\mathrm{an}}$ is dense, but the induced topology on this set is totally disconnected.
+\end{fact}
+We can glue them together by interpolations of monomial points.
+
+\begin{proposition}
+Let $\mathscr{X}$ be an $snc$-model of $X$, write $\mathscr{X}_{k}=\sum_{i\in I}N_{i}E_{i}$. Let $x$ be an intersection
+point of $E_{i}$ and $E_{j}$ with $i\neq j$, take $\alpha_{i},\alpha_{j}\in\mathbb{R}^{+}$ such that
+$\alpha_{i}N_{i}+\alpha_{j}N_{j}=1$. Then there exists a unique smallest valuation
+\[
+   v:\mathcal{O}_{X,x}\backslash\{0\}\rightarrow\mathbb{R}^{+}
+\]
+such that $v(z_{i})=\alpha_{i},v(z_{j})=\alpha_{j}$, where $z_{i},z_{j}$ are local equations for $E_{i},E_{j}$
+at $x$.
+\end{proposition}
+
+We will sketch the construction of such a valuation $v$. For $R=k[[t]]$, we have $\hat{\mathcal{O}}_{X,x}\cong k[[z_{i},
+z_{j}]]$. It is not difficult to show that every element $f\in\mathcal{O}_{X,x}\backslash\{0\}$ can be written
+in the completed local ring $\hat{\mathcal{O}}_{X,x}$ as a power series
+\[ f=\sum_{\beta\in\mathbb{N}^{\{i,j\}}}c_{\beta}z_{i}^{\beta_{i}}z_{j}^{\beta_{j}} \]
+where each coefficient $c_{\beta}\in k$. Then
+\[ v(f)=\mathrm{min}\{\alpha_{i}\beta_{i}+\alpha_{j}\beta_{j}\mid\beta\in\mathbb{N}^{\{i,j\}},c_{\beta}\neq 0\}. \]
+This valuation $v$ extends to a real valuation $v:K(X)^{*}\rightarrow\mathbb{R}$ such that
+$v(t)=v(\mathrm{unit}.z_{i}^{N_{i}}z_{j}^{N_{j}})=N_{i}\alpha_{i}+N_{j}\alpha_{j}=1$. Thus $v$ extends
+$v_{K}$ on $K$ and therefore gives rise to a point $y\in X^{\mathrm{an}}$ which we call the monomial point
+associated with $(\mathscr{X},(E_{i},E_{j}),(\alpha_{i},\alpha_{j}),x)$.
+
+\begin{exercise}
+  \begin{enumerate}
+    \item For $\alpha_{i}=1/N_{i},\alpha_{j}=0$, then $y$ is the divisorial point associated with $(\mathscr{X},E_{i})$.
+    \item Show that $y$ is still monomial with respect to the blow up of $\mathscr{X}$ at $x$ and determines
+          the associated components and parameter vector $\alpha$.
+    \item Show that $y$ is divisorial if and only if $\alpha_{i},\alpha_{j}\in\mathbb{Q}$.
+  \end{enumerate}
+\end{exercise}
+
+\begin{definition}
+If $\mathscr{X}$ is an $snc$-model of $X$, then the Berkovich skeleton $\mathrm{Sk}(\mathscr{X})$ is the set
+of $y\in X^{\mathrm{an}}$ that are monomial with respect to $\mathscr{X}$.
+\end{definition}
+
+We will now construct a map as follows.
+\begin{eqnarray*}
+\Phi:\Gamma(\mathscr{X}_{k}) &\rightarrow &\mathrm{Sk}(\mathscr{X})\\
+\left\{
+\begin{array}{@{}c@{}}
+\text{vertex} \; v_{i} \\
+\updownarrow \\
+\text{component}\; E_{i} \; \text{in} \; \mathscr{X}_{k}
+\end{array}
+\right\}
+&\mapsto &
+\left\{
+\begin{array}{@{}c@{}}
+\text{divisorial point} \\
+\text{associated with} \; (\mathscr{X},E_{i})
+\end{array}
+\right\}\\
+\left\{
+\begin{array}{@{}c@{}}
+\text{point with barycentric} \\
+\text{coordinate} \; (\lambda_{i},\lambda_{j}) \\
+\text{on an edge} \; e_{x} \\
+\text{corresponding to}\; x\in E_{i}\cap E_{j}
+\end{array}
+\right\}
+&\mapsto &
+\left\{
+\begin{array}{@{}c@{}}
+\text{monomial point associated} \\
+\text{with} \; (\mathscr{X},(E_{i},E_{j}),(\frac{\lambda_{i}}{N_{i}},\frac{\lambda_{j}}{N_{j}}),x)
+\end{array}
+\right\}
+\end{eqnarray*}
+
+\begin{proposition}
+The map $\Phi$ is a homeomorphism.
+\end{proposition}
+
+\begin{proof}
+It is not hard to see that $\Phi$ is a bijection. (exercise)
+
+It is continuous. (exercise)
+
+Then we have that it is a homeomorphism since $\Gamma(\mathscr{X}_{k})$ is compact and $\mathrm{Sk}(\mathscr{X})$ is
+Hausdorff.
+\end{proof}
+
+\begin{proposition}
+The embedding $\mathrm{Sk}(\mathscr{X})\hookrightarrow X^{\mathrm{an}}$ has a canonical retraction
+\[ \rho_{\mathscr{X}}:X^{\mathrm{an}}\rightarrow\mathrm{Sk}(\mathscr{X}). \]
+\end{proposition}
+
+The construction takes two steps. The first step is to construct the specialization map as follows
+\begin{align*}
+\mathrm{sp}_{\mathscr{X}}:X^{\mathrm{an}}&\rightarrow \mathscr{X}_{k} \\
+x&\mapsto
+\left\{
+\text{the image of the closed point of} \; \Spec\mathscr{H}(x)^{\circ} \scriptstyle \atop
+\text{under} \; \Spec\mathscr{H}(x)^{\circ}\rightarrow\mathscr{X}
+\right\}
+\end{align*}
+Since $\mathscr{X}$ is proper over $R$, the canonical morphism $\Spec\mathscr{H}(x)\rightarrow X\hookrightarrow
+\mathscr{X}$ can be uniquely extended to a morphism $\Spec\mathscr{H}(x)^{\circ}\rightarrow\mathscr{X}$ by the
+valuative criterion of separatedness.
+
+\begin{example}
+$x\in X(K)$ extends to $\Spec R\rightarrow \mathscr{X}$ and reduction mod $t$ yields
+$(\Spec k\rightarrow\mathscr{X}_{k})=\mathrm{sp}_{\mathscr{X}}(x)$.
+\end{example}
+
+\begin{exercise}
+(1) Show that $\mathrm{sp}_{\mathscr{X}}$ is anticoutinuous. (i.e., inverse image of a closed set is open.)
+
+(2) If $y$ is a monomial point associated with $(\mathscr{X},(E_{i},E_{j}),(\alpha_{i},\alpha_{j}),x)$.
+Assume $\alpha_{i},\alpha_{j}\neq 0$, show that $\mathrm{sp}_{\mathscr{X}}(y)=x$.
+\end{exercise}
+
+Now $\rho_{\mathscr{X}}$ can be defined as follows.
+\begin{itemize}
+  \item If $\mathrm{sp}_{\mathscr{X}}(x)$ lies on a unique component $E_{i}$, then
+        $\rho_{\mathscr{X}}(x):=\text{divisorial}$ point associated with $(\mathscr{X},E_{i})$;
+  \item If $\mathrm{sp}_{\mathscr{X}}(x)\in E_{i}\cap E_{j}$ for $i\neq j$, then
+        $\rho_{\mathscr{X}}(x):=\text{monomial point associated with}$
+        $(\mathscr{X},(E_{i},E_{j}),(-\ln|z_{i}(x)|,-\ln|z_{j}(x)|),\mathrm{sp}_{\mathscr{X}}(x))$, where
+        $z_{i},z_{j}$ are local equations for $E_{i},E_{j}$ at $\mathrm{sp}_{\mathscr{X}}(x)$.
+\end{itemize}
+
+\begin{exercise}
+Show that $\rho_{\mathscr{X}}$ is continuous.
+\end{exercise}
