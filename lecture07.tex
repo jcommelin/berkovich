@@ -1,0 +1,103 @@
+\section{Lecture 7}
+
+
+\begin{notation}
+\hfill\\
+$R$: complete DVR\\
+$t$: uniformizer\\
+$K$: quotient field\\
+$k=k^{a}$: residue field
+\end{notation}
+
+We denote by $v_{K}$ the discrete valuation $K^{*}\rightarrow\ZZ$ and by $|\cdot|_{K}$ an absolute value on $K$:
+\begin{align*}
+K&\rightarrow\mathbb{R}^{+}\\
+x&\mapsto
+  \left\{
+      \begin{aligned}
+          &\exp(-v_{K}(x)) \; &\text{if} \; x\neq 0\\
+          &0 \; &\text{if} \; x=0
+      \end{aligned}
+  \right.
+\end{align*}
+
+We use this structure on $K$ to develop a theory of analytic space over $K$ and in particular, to put an analytic structure
+on algebraic varieties (just like over $\CC$).
+
+Naive definition of analytic functions over $K$ (i.e., function locally given by converging power series) does not have
+good properties because $k$ is totally disconnected with respect to the metric topology, e.g.
+\begin{align*}
+f:k&\rightarrow\mathbb{R}\\
+x&\mapsto
+  \left\{
+      \begin{aligned}
+          &1 \; &\text{if} \; x\in K\\
+          &0 \; &\text{otherwise}
+      \end{aligned}
+  \right.
+\end{align*}
+
+We will use the theory developed by Berkovich at the end of the 80's.
+We will only consider analytic spaces associated with algebraic varieties over $K$.
+
+Let $X$ denote a scheme of finite type over $K$, then we define its Berkovich analytification as follows.
+\begin{multline*}
+X^{\mathrm{an}}:=\{x=(\xi_{x},|\cdot|_{x})\mid \xi_{x}\in X,\; |\cdot|_{x} \; \text{is an absolute value
+on}\; \\ \kappa(\xi_{x}) \; \text{extending}\; |\cdot|_{K}\}
+\end{multline*}
+Then the following two properties are satisfied.
+\begin{itemize}
+  \item [(1)] the topology on $X^{\mathrm{an}}$ is finer than the Zariski topology on $X$, that is, the map
+        $i:X^{\mathrm{an}}\rightarrow X: x=(\xi_{x},|\cdot|_{x})\mapsto\xi_{x}$ is continuous;
+  \item [(2)] absolute value of regular functions are continuous, i.e., for every Zariski-open subset $U$ and
+        every regular function $f\in\mathcal{O}_{X}(U)$, the map
+        \[ |f|:i^{-1}(U)\rightarrow\mathbb{R}^{+}:x=(\xi_{x},|\cdot|_{x})\mapsto |f(x)|:=|f(\xi_{x})|_{x} \]
+        is continuous.
+\end{itemize}
+
+If $x(=(\xi_{x},|\cdot|_{x}))\in X^{\mathrm{an}}$, then we can define the residue field $\mathscr{H}(x)$ of $X^{\mathrm{an}}$ at $x$
+as the completion of $\kappa(\xi_{x})$ with respect to the absolute value $|\cdot|_{x}$. The field $\mathscr{H}(x)$
+is a valued extension of $K$.
+\begin{itemize}
+  \item $\mathscr{H}(x)^{\circ}$=valuation ring ($|\cdot|_{x}\leq 1$)
+  \item $\mathscr{H}(x)^{\circ\circ}$=maximal ideal ($|\cdot|_{x}< 1$)
+  \item $\widetilde{\mathscr{H}(x)}$=residue field=$\mathscr{H}(x)^{\circ}/\mathscr{H}(x)^{\circ\circ}$
+\end{itemize}
+
+Then we have the following topological properties of $X^{\mathrm{an}}$.
+\begin{itemize}
+  \item [(1)] $X^{\mathrm{an}}$ is locally compact and locally path-connected.
+  \item [(2)] $X^{\mathrm{an}}$ is connected $\Leftrightarrow$ $X$ is connected.
+  \item [(3)] $X^{\mathrm{an}}$ is Hausdorff $\Leftrightarrow$ $X$ is separated.
+  \item [(4)] $X^{\mathrm{an}}$ is compact $\Leftrightarrow$ $X$ is proper.
+\end{itemize}
+
+We also notice that
+\begin{itemize}
+  \item If $\xi$ is a closed point of $X$, then $i^{-1}(\xi)=\{(\xi,|\cdot|)\}$ is a
+        unique extension of $|\cdot|_{K}$ to $\kappa(\xi)$ which is a finite extension of $K$.
+  \item If $\xi$ is not closed, then $i^{-1}(\xi)$ is nonempty and in fact, very large.
+\end{itemize}
+
+If $X$ is integral, we consider
+\begin{eqnarray*}
+X^{\mathrm{an}}\supset i^{-1}(\eta_{x})=
+\left\{
+\text{absolute value on} \scriptstyle \atop
+K(X) \;\text{extending} \; |\cdot|_{K}
+\right\}
+&\longleftrightarrow &
+\left\{
+\text{real valuation} \; K(X)^{*}\rightarrow\mathbb{R} \scriptstyle \atop
+\text{extending} \; v_{K}
+\right\}^{X}\\
+|\cdot|&\mapsto &-\ln|\cdot|\\
+\exp(-v(\cdot))&\leftmapsto &v(\cdot)
+\end{eqnarray*}
+The latter is classically studied in birational geometry.
+
+\begin{observation}
+It is (very) difficult to understand the geometry of $X^{\mathrm{an}}$ directly from the definition
+if $\mathrm{dim}(X)\geq 2$.
+\end{observation}
+So we will analyze the structure using the geometry of models.
