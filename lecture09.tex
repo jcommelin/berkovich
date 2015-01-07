@@ -37,13 +37,17 @@ A component $y$ of $A_{\CC}$ gives rise to a valuation $\ord_y$ on $K(A)$ and si
 
 %TODO image of a Torus A degenerating into several connected components in A_{\CC}
 
-\[A_K^{\an} = \{(\mathfrak{p},\val)|\mathfrak{p}\in A \text{ and } \val \text{ is a valuation on } \mathcal{K}(\mathfrak{p}) \text{ that extends the valuation on} K.\}\]
+\[
+	A_K^{\an} = \left\{(\mathfrak{p},\val) \middle\vert
+		\parbox{.5\textwidth}{\centering$\mathfrak{p}\in A$ and $\val$ is a valuation on $\mathcal{K}(\mathfrak{p})$ that extends the valuation on $K$.}
+	\right\}
+\]
 
 \[\Jac(G)\subset \Jac(X)^{\an}\]
 
 To get more information, we can extend the field. Let $L|K$ be a finite extension, so $L = \CC((t^{\frac{1}{n}}))$. This gives rise to a curve $X_L$ and a model $\mathfrak{X}_L$ which is a resolution of $\mathfrak{X}\times_R R_L$. The dual graph of $\overline{\mathfrak{X}_L}$ is $\frac{1}{N}(G)$.
 
-Now build a N\'eron model of $\Jac(X_L)$. The component group of the special fiber is $\Jac(\frac{1}{N}(G)$.
+Now build a N\'eron model of $\Jac(X_L)$. The component group of the special fiber is $\Jac(\frac{1}{N}(G))$.
 
 \[
 \xymatrix{
@@ -51,6 +55,7 @@ X_L \ar[d] & \Jac(X_L) \ar[d] \ar@{~>}[r] & \Jac(X_L)_{\CC} \\
 X_K & \Jac(X_K) \ar@{~>}[r] & \Jac(X_K)_{\CC}
 }
 \]
+%TODO: The arrowheads on the squigly arrows look weird.
 
 \noindent We can pull rational functions on $\Jac(X_K)$ back  to to $\Jac(X_L)$ and get $\ord_y$ for $y\in\Jac(\frac{1}{N}G$. Now $\frac{1}{N}\ord_y$ extends the valuation on $K$. (We divide by $N$ to remove the ramification). With this we also get that $\Jac(\frac{1}{N})$ is included in $\Jac(X)^{\an}$.
 
