@@ -72,7 +72,28 @@ $\Gamma(\mathfrak{X}_{k})$ is a finite graph with vertices $\{ v_{i} | i \in I
 	\{\text{loops at } v_{i}\} &\longleftrightarrow \{ \text{self-intersections of $E_{i}$} \} \\
 	\{\text{edges} \} &\longleftrightarrow \{ \text{intersection points} \}
 \end{align*}
-TODO: picture of the construction.
+
+\begin{center}
+	\begin{tikzpicture}[every node/.style={font=\small}]
+		\draw (0,0) -- (0,2) node[above] {$E_{1}$};
+		\draw (-.3,.7) to [controls=+(40:3) and +(235:3)] (1,2) node[right] {$E_{2}$};
+		\draw (-.3,.5) -- (1,.5) node[right] {$E_{3}$};
+		\draw (-.3,.2) -- (1,.2) node[below] {$E_{4}$};
+		\path (-.5,1.5) node {$\mathfrak{X}_{\kappa}$};
+
+		\begin{scope}[xshift=6cm,yshift=1cm]
+			\draw[fill] (0,0)  circle (0.01) node[left]  {$v_{1}$};
+			\draw[fill] (1,1)  circle (0.01) node[right] {$v_{2}$};
+			\draw[fill] (1,0)  circle (0.01) node[right] {$v_{3}$};
+			\draw[fill] (1,-1) circle (0.01) node[right] {$v_{4}$};
+			\draw (0,0) -- (1,1);
+			\draw (1,1) to [controls=+(165:1) and +(90:1)] (1,1);
+			\draw (0,0) -- (1,0);
+			\draw (0,0) -- (1,-1);
+			\path (-.5,.8) node {$\Gamma(\mathfrak{X}_{\kappa})$};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
 
 We label each vertex $v_{i}$ with the additional data $(N_{i}, p_{\textrm{a}}(E_{i}))$.
 
