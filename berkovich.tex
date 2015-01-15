@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper]{article}
+\documentclass[10pt,a4paper,twoside]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
@@ -23,7 +23,14 @@
 \declaretheorem[sibling=equation]{notation}
 \declaretheorem[sibling=equation]{example}
 \declaretheorem[sibling=equation,style=remark]{exercise}
-\newenvironment{solution}{}{}
+
+\usepackage{answers}
+\usepackage{nextpage}
+
+\Newassociation{solution}{Solution}{solutionfile}
+\Newassociation{hints}{Hints}{hintsfile}
+
+\renewenvironment{Solution}[1]{\noindent\textbf{Solution to #1.}}{\par}
 
 \usepackage{enumitem}
 
@@ -80,6 +87,9 @@
 
 \tableofcontents
 
+\Opensolutionfile{solutionfile}
+\Opensolutionfile{hintsfile}
+
 \input{lecture01.tex}
 \input{lecture02.tex}
 \section{Lecture 3}
@@ -95,5 +105,16 @@
 \section{Lecture 13}
 \input{lecture14.tex}
 \section{Lecture 15}
+
+\Closesolutionfile{solutionfile}
+\Closesolutionfile{hintsfile}
+
+\cleartoevenpage
+\section{Hints}
+\input{hintsfile}
+
+\cleartoevenpage
+\section{Solutions}
+\input{solutionfile}
 
 \end{document}
