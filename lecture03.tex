@@ -1,0 +1,41 @@
+\section{Lecture 3}
+Let $X$ be a smooth curve over $\CC((t))$ of genus $g$ and $\mathfrak{X}$ a regular snc semistable model. We indicate with $\overline{\mathfrak{X}}$ the special fiber and with $\overline{\mathfrak{X}}_1, \overline{\mathfrak{X}}_2, \dots, \overline{\mathfrak{X}}_n$ its irreducible components. The model is semistable, thus $\overline{\mathfrak{X}}$ is reduced, that is, using the notation of the previous lectures, $N_i = 1$ for every irreducible component. \\
+
+
+We suppose that the special fiber $\overline{\mathfrak{X}}$ has compact type, meaning that its Jacobian $\Jac(\overline{\mathfrak{X}})$ is compact, or equivalently that the dual graph $G$ is a tree, or $\sum_{i=1}^n g(\overline{\mathfrak{X}}_i) = g$, with $g$ the genus of the generic fiber. 
+
+Let $L$ be a line bundle of degree $d$ on $X$. It extends to a line bundle $\mathcal{L}$ on $\mathfrak{X}$ such that $\mathcal{L}|_X = L$. It is important to remark that this extension is not unique, but the extensions are linearly equivalent. 
+
+\begin{exercise} Show that for each component $\overline{\mathfrak{X}}_i$ there is a unique extension $\mathcal{L}_i$ on $\mathfrak{X}$ of $L$ such that $\mathcal{L}_i|_X =L$ and 
+\[
+\textrm{deg}\big( \mathcal{L}_i|_{\overline{\mathfrak{X}}_j} \big) = 
+\begin{cases} d \ \textrm{if} \ i=j \\ 
+0 \ \textrm{otherwise}. 
+\end{cases}
+\]
+\end{exercise}
+
+From a linear series $W \subseteq \Gamma(X,L)$ of rank $\textrm{rank}(W) = (\textrm{dim}_{\mathbb{C}((t))} - 1 )= r$, we obtain $W_i \subseteq \Gamma(\overline{\mathfrak{X}}_i, \mathcal{L}_i)$ consisting of sections of $\mathcal{L}_i|_{\overline{\mathfrak{X}}_i}$ that are limit of sections in $W$. 
+
+The theory developed by Eisenbud-Harris studies linear series $W$ on $X$ by compatible collections $\{W_i\}$ of linear series on the irreducible components $\overline{\mathfrak{X}}_i$. The compatibility condition are expressed in terms of vanishing sequences. If $a_0 < a_1 < \cdots < a_r$ is the vanishing sequence of $W_i$ along a node $\overline{\mathfrak{X}}_i \cap \overline{\mathfrak{X}}_j$ and $b_0 < b_1 < \cdots < b_r$ the vanishing sequence of $W_j$, the conditions are $a_i + b_{r-i} \geq d$ for all $i$. \\
+
+If $\overline{\mathfrak{X}}$ is not of compact type, there may not exists an $\mathcal{L}_i$ on $\mathfrak{X}$ of $L$ such that $\mathcal{L}_i|_X =L$ and 
+\[
+\textrm{deg}\big( \mathcal{L}_i|_{\overline{\mathfrak{X}}_j} \big) = 
+\begin{cases} d \ \textrm{if} \ i=j \\ 
+0 \ \textrm{otherwise}. 
+\end{cases}
+\]
+
+In this setting two approaches have been introduced. The approach of Osserman in [{\sl Limit linear series for curves not of compact type, 2014, preprint}] considered a generalization of the limit linear series of Eisenbud-Harris.  
+It is necessary to specify additional data, namely line bundles $M_i$ on $\overline{\mathfrak{X}}$, such that 
+\begin{itemize}
+\item $ M_i|_{\overline{\mathfrak{X}_j}} \cong \begin{cases} \mathcal{O}(\mathfrak{X}_i \cap \mathfrak{X}_j) & i \not = j \\
+\mathcal{O}(-\overline{\mathfrak{X}}_i \cap \cup_{k \not = i} \overline{\mathfrak{X}}_k) &i = j \end{cases} $
+\item $\bigotimes_{i \in \{1, 2, \dots, n\}} M_i = \mathcal{O}_X$. 
+\end{itemize}
+These line bundles $M_i$ are used to understand all possible $\mathcal{L}$. The choice of $\mathcal{L}_i$ such that $\Gamma(\overline{\mathfrak{X}}, \mathcal{L}_i) \hookrightarrow  \Gamma(\overline{\mathfrak{X}_i}, \mathcal{L}_i)$ induces $ \Gamma(X, L) \rightarrow \Gamma(\mathfrak{X}, \mathcal{L}_i)$. The compatibility condition is less obvious in this approach and considers \lq \lq multivanishing conditions'', (see the {\sl loc. cit.} paper for futher reading). 
+The curves considered in this approach are of {\sl pseudocompact type}, meaning that the dual graph is a tree with multiple edges. An example of such curves are binary curves. \\
+
+
+The second approach is to study obstructions to find the extensions $\mathcal{L}_i$ of $L$ with the desired properties. This is based computations on skeletons of curves and their Jacobians, in particular on the theory of ranks of divisors on graphs of Baker and Norine (M. Baker and S. Norine, {\sl Riemann - Roch and Abel-Jacobi theory on a finite graph}, Advances in Mathematics 215 (2007), n. 2, 766-788).

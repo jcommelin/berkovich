@@ -1,0 +1,47 @@
+\section{Lecture 15}
+In this lecture we will present an algorithm for computing ranks of divisors on graphs. 
+
+We first look at the curve case. Let $x_0$ be a point on a curve $X$. For every effective divisor $D$ there is a canonical representative $D_0 \in [D]$ obtained in the following way: look at $\Gamma(X, \mathcal{O}(D))$ and choose a section $s$ with maximal order of vanishing at $x_0$. Such a section is unique up to scaling by an element of $\CC^{\times}$. We have a divisor $D_0$ characterized by being effective away from $x_0$ and by having the maximal possible order of vanishing at $x_0$. 
+
+We do the same on a graph $G$. Let $[D]$ be a divisor class and $v_0$ a vertex of $G$. We find the divisor $D_0\in [D]$ such that it has maximal possible coefficient at the point $v_0$ between the divisor in $[D]$ that are effective away from $v_0$. So, $D_0$ is characterized by the tuple of distances from $v_0$ to points of $D_0$ being lexicographically minimal.
+
+\begin{proposition} D is effective if and only if $D_0$ is effective. \end{proposition}
+
+\begin{algorithm}[Dhar's Burning algorithm, Ye Luo, {\sl Rank-determining sets of metric graphs}, Journal of Combnatorial Theory, series A {\bf 118} (2011), 217-230]   
+{\bf Input:} A divisor $D$, and a point $v_0 \in G$. \\
+{\bf Output:} The unique $v_0$-reduced divisor equivalent to $D$.
+\begin{itemize}
+\item Step 1: choose any $D' \sim D$ effective away from $v_0$ 
+\item Step 2: start a fire at $v_0$ and think that at each vertex $v \not = v_0$ there are $D(v)$ firefighters. If $D(v)$ is smaller than the number of directions from which the fire is approaching $v$, then the vertex burn and the fire proceed burning along the other edges incident to $v$. 
+
+If the coefficient $D(v)$ is bigger than the number of directions form which the fire is approaching, then the firefighters can fight the fire: one firefighter moves along each edge from which the fire comes and and reach the vertex adjacent to $v$. 
+\item Repeat Step 2 until the whole graph burns. The divisor corresponding to the final configuration is $v_0$-reduced. 
+\end{itemize}
+\end{algorithm}
+
+From Dhar's Burning algrithm follows this algorithm for computing the rank of a divisor $D$. We remark that the algorithm is not very efficient.
+\begin{algorithm}[Rank of a divisor] 
+{\bf Input:} An effective divisor $D$. \\
+{\bf Output:} The rank of $D$. 
+\begin{itemize}
+\item Step 1: Run Dhar's algorithm on $D - v$ for all vertices $v \in G$ to see whether $[D-v]$ is effective for all $v$. If not r$(D) =0$. 
+\item Step 2: Otherwise run Dhar's algorithm to $D - v_i - v_j$ to see whether $[D - v_i - v_j]$ is effective for all $v_i, \ v_j$. If not r$(D) = 1$. 
+\item Step k: Run Dhar's algorithm to $D - \sum_{i = 1}^k v_i$ to see whether $[D - \sum_{i = 1}^k v_i]$ is effective for all sums of $k$ vertices. If not r$(D) = k-1$.  
+\end{itemize}
+\end{algorithm}
+
+We conclude with a important tool introduced by Luo for computing the rank of a divisor. 
+\begin{definition} Let $A$ be a nonempty  subset of  $V(G) $ and $D$ a divisor. We define $\textrm{rk}_A(D)=-1$ if $[D] \not = \emptyset$, otherwise
+\[
+ \textrm{rk}_A(D) = \max \big\{ r \in \mathbb{Z} | \, [D-E] \not = \emptyset, \, \forall E \in \textrm{Div}(G), \, \textrm{supp}(E) \subseteq A, \, E \geq 0, \, \textrm{deg}(E) = r\}
+\]
+A set $A \subseteq V(G)$ is rank determining if r$(D) = r_A(D)$. \end{definition}
+
+The property of being rank determining is topological:
+
+\begin{theorem} If $f: G \rightarrow G'$ homeomorphism and $A \subset G$ is rang determining and $f(A) \subseteq V(G')$, then $f(A)$ is rank determining. 
+\end{theorem}
+The following is a sufficient criterion for being rank determining set:
+\begin{theorem} If the closure in $G$ of each connect component of $G \setminus A$ is a tree then $A$ is rank determining. \end{theorem}
+\begin{corollary} There exists a rank determining set $A$ of size $g+1$. 
+\end{corollary}
