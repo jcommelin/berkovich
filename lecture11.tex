@@ -1,0 +1,54 @@
+
+\begin{section}{Lecture 11}
+\begin{subsection}{Topology and metrics on $X^{\textrm{an}}$}
+Open subsets of $X^{\textrm{an}}$ are subsets $U$ such that $U$ intersects every branch in an open point and if $U$ contains a divisorial point $X$, then $U$ contains almost all branches leaving from $x$. \\
+
+There exist two unique metrics on $X^{\textrm{an}} \setminus \{\textrm{type $4$ points}\}$ respectively characterized by the property that if $E_i$ is a component with multiplicity $N_i$ intersecting a component $E_j$ of multiplicity $N_j$ then the edge connecting the corresponding vertices has length  $\frac{1}{N_iN_j}$ or $\frac{1}{\textrm{lcm}(N_i,N_j)}$. 
+
+\begin{remark} The disadvantage of the first metric is that it behaves badly with finitely ramified base changes. 
+\end{remark}
+
+
+We need to check that these metrics are independent of the choice of model. It is not difficult to do this for the first model using
+\[
+\frac{1}{N_i(N_i+N_j)} + \frac{1}{N_j(N_i+N_j)} = \frac{1}{N_i \, N_j}. 
+\]
+\begin{exercise} Check the same property for the second metric.
+\end{exercise}
+\begin{theorem}[Fundamental Theorem] 
+If $\mathfrak{X}$ is a snc-model of $X$, then $\rho_{\mathfrak{X}}: X^{\textrm{an}} \rightarrow \textrm{Sk}(\mathfrak{X})$, can be extended to a strong deformation retract 
+\[
+H: X^{\textrm{an}} \times [0,1] \rightarrow X^{\textrm{an}}, 
+\]
+i.e. $H$ satisfies the following properties: 
+\begin{itemize}
+\item $H(\cdot, 0) = \textrm{Id}$ and $H(\cdot, 1) = \rho_{\mathfrak{X}}$;
+\item $H$ is continuos;
+\item $H(x,t)=x$ if $x$ is a point of the skeleton..
+\end{itemize} 
+
+In particular, $X^{\textrm{an}}$ is homotopy equivalent to Sk$(\mathfrak{X}$). \\
+\end{theorem} 
+\end{subsection}
+\begin{subsection}{Higher dimension}
+Let $X$ be smooth proper, geometrically connected over $K$. We assume moreover char$(k) = 0$ or dim$(X) = 2$ (in his last situation we can use the result of Cossart-Piltant). By resolution of singularities we know that every $R$-model of $X$ can be dominated by a snc-model. We can again define divisorial and monomial valuations, as well as the Berkovich skeleton Sk$(\mathfrak{X})$ of a snc-model $\mathfrak{X}$. 
+
+Sk$(\mathfrak{X})$ is canonically homeomorphic to the dual intersection complex $\Delta(\mathfrak{X}_k)$ of $\mathfrak{X}_k$. 
+
+The construcion is the following: 
+\[
+\left\{
+\begin{array}{l}
+\textrm{faces of dimension}\\
+\textrm{$d$ of} \ \Delta(\mathfrak{X}_k) \end{array} \right\} \leftrightarrow  
+\left\{ \begin{array}{l} \textrm{connected components of intersections of $d+1$}\\
+\textrm{distinct irreducible components in $\mathfrak{X}_k$}
+\end{array} \right\}
+\]
+
+\begin{theorem} The analytification $X^{\textrm{an}}$ admits a strongly deformation retract onto Sk$(\mathfrak{X})$. 
+\end{theorem}
+
+We remark that in dim$(X) \geq 2$, there no longer exist minimal snc-models. 
+\end{subsection}
+\end{section}
