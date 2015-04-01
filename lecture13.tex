@@ -1,0 +1,98 @@
+
+\begin{section}{Lecture 13}
+We consider again $X$ over $K$ with dim$(X) \geq 2$. We saw in the previous lecture that the snc-models $\mathfrak{X}$ of $X$ still gives rise to Berkovich skeleta. Moreover Sk$(\mathfrak{X}) \cong \Delta(\mathfrak{X}_s)$, where $\Delta(\mathfrak{X}_s)$ is the dual intersection complex of $\mathfrak{X}_k$. We have the following results: 
+\begin{theorem}
+ Sk$(\mathfrak{X})$ is a strong deformation retraction of $X^{\textrm{an}}$. 
+\end{theorem}
+\begin{theorem}
+ Assuming resolution of singularities, it holds that
+ \[
+  X^{\textrm{an}} = \varprojlim_{\mathfrak{X} \ \textrm{snc-model}} \textrm{Sk}(\mathfrak{X}).
+ \]
+\end{theorem}
+It is important to remark that in the curves case, at least if $g(X) \geq 1$, we have a minimial snc-model, but this fails in higher dimension. There are two possible ways of solving this probelm:
+\begin{itemize}
+ \item Enlarge the class of models (alt-models) to get minimal models in all dimensions, (see Nicaise--Xu) ;
+ \item Start from any snc-model $\mathfrak{X}$ and use pluricanonical forms on $X$ to identify the  \lq \lq canonical'' faces of Sk$(\mathfrak{X})$, (see Musta\c{t}\u{a}--Nicaise, Kontsevich--Soibelman).
+\end{itemize}
+
+\begin{theorem}[Nicaise--Xu]
+ Both approaches give the same result.
+\end{theorem}
+We will study the second approach in the case of curves. Let $X$ be a curve over $K$. Let $m \geq 1$ and $\omega$ a non-zero rational $m$-canonical form on $X$, i.e. $\omega$ is a non-zero rational section of 
+\[
+ \omega^{\otimes n}_{X/K}, \ \textrm{with} \ \omega_{X/K} = \Omega^1_{X/K}. 
+\]
+We want to define a weight function
+\[
+ \textrm{wt}_{\omega}: \ X^{\textrm{mon}} \rightarrow \mathbb{R}
+\]
+Given a point $x \in X^{\textrm{mon}}$, we choose a snc-model $\mathfrak{X}$ of $X$ such that $x \in \textrm{Sk}(\mathfrak{X})$. Viewing $\omega$ as a rational section of $\omega_{\mathfrak{X}/R}(\mathfrak{X}_{k},\textrm{red})^{\otimes m}$, we can write $\omega = f \cdot \omega_0$, where $\omega_0$ is the generator of $\omega_{\mathfrak{X}/R}(\mathfrak{X}_{k},\textrm{red})^{\otimes m}$ at $\textrm{sp}_{\mathfrak{X}} (x) \in \mathfrak{X}_k$. We set 
+\[
+ \textrm{wt}_{\omega}(x) = -\ln|f(x)| \in \mathbb{R}.
+\]
+ 
+
+\begin{example}
+ If $x$ is the divisorial point associated with $(\mathfrak{X}, E_i)$ then 
+ \[\textrm{wt}_{\omega}(x) = \frac{\mu_i}{N_i}, \]
+ where $  \mathfrak{X}_k = N_i E_i + \ \textrm{other components}$ and $\textrm{div}_{\mathfrak{X}}(\omega) = \mu_i E_i + \ \textrm{other components}$.
+\end{example}
+The key point is that the defintion of  $\textrm{wt}_{\omega}(x)$ does not depend on the choice of the model $\mathfrak{X}$. The reason is that if $h : \mathfrak{X}' \rightarrow \mathfrak{X}$ is the blow-up map at a node of the special fiber $\textrm{sp}_{\mathfrak{X}}(x)$, then 
+\[
+ h^{*} \omega_{\mathfrak{X/R}}(\mathfrak{X}_k, \textrm{red}) = \omega_{\mathfrak{X}'/R}(\mathfrak{X}', \textrm{red}).
+\]
+However it is crucial that we chose $\mathfrak{X}$ such that $x \in \textrm{Sk}(\mathfrak{X})$. Otherwise, indicating again with $h: \mathfrak{X}' \rightarrow \mathfrak{X}$ the blow up map at $\textrm{sp}_{\mathfrak{X}}(x)$, we would obtain 
+\[
+ h^{*} \omega_{\mathfrak{X/R}}(\mathfrak{X}_k, \textrm{red}) = \omega_{\mathfrak{X}'/R}(\mathfrak{X}', \textrm{red}-E),
+\]
+where $E$ is the exceptional divisor. \\
+
+
+
+Let $D$ be a divisor on $X$. 
+\begin{definition}
+ An snc-model of $(X,D)$ is an snc-model $\mathfrak{X}$ of $X$ sucht that $\mathfrak{X}_k$ has strict normal crossing with the closure of $D$.
+\end{definition}
+Such a model always exists via resolution of singularities. The skeleton $\textrm{Sk}(\mathfrak{X},D)$ is 
+\[
+ \textrm{Sk}(\mathfrak{X},D) = \textrm{Sk}(\mathfrak{X}) \cup \{\textrm{paths from Sk$(\mathfrak{X})$ to the points in supp$(D)$ (without end points)}\}.
+ \]
+We view Sk$(\mathfrak{X}, D)$ as a graph with some half-open edges. 
+\begin{theorem}[Baker-Nicaise] If $\mathfrak{X}$ is a snc-model of $(X, D=\textrm{div}_X(\omega))$ then 
+\begin{itemize}
+ \item $\textrm{wt}_{\omega}$ is affine on every edge of Sk$(\mathfrak{X}, D)$;
+ \item the slope on the path running to a point $x$ is the support of $D$ is given by $N(m + \textrm{deg}_x(\textrm{div}_X (\omega))$, where $N$ is the multiplicity of the component corresponding to the starting point of the path.
+ \item the slope of $\textrm{wt}_{\omega}$ is constant and positive on all other paths running from Sk$(\mathfrak{X}, D)$ to points of type I and IV
+ \item The degree of the divisor 
+ \[
+  D = \Delta(\textrm{wt}_{\omega}|_{\textrm{Sk}(\mathfrak{X}, \textrm{div}_X(\omega))})
+ \]
+at a point $v$ is defined as the sum of the outgoing slopes. The divisor $D$ is such that
+\[
+ D = m \cdot K_{\textrm{Sk}(\mathfrak{X},D)},
+\]
+where the degree of $K_{\textrm{Sk}(\mathfrak{X},D)}$ at the vertex $v_i$ is given by 
+\[
+ N_i(2g(C_i)-2+\textrm{val}(v_i)).
+ \]
+\end{itemize}
+\end{theorem}
+Now we assume that $\omega$ is regular, i.e. has no poles on $X$. Then the slopes of $\textrm{wt}_{\omega}$ on paths from Sk$(\mathfrak{X})$ to type I or IV points are positive. We define 
+\[
+ \textrm{Sk}(\mathfrak{X}, \omega) = \ \textrm{locus where $\textrm{wt}_{\omega}$ takes its minimal value} = \ \textrm{union of faces of Sk$(\mathfrak{X}).$}
+\]
+We have that Sk$(\mathfrak{X})$ is independt of $\mathfrak{X}$, since $\textrm{wt}_{\omega}$ does not depend on $\mathfrak{X}$. So we can denote Sk$(\mathfrak{X}, \omega)$ by Sk$(X, \omega)$ . 
+\begin{definition}
+ \[
+  \textrm{Sk}(X) = \bigcup_{\substack{\omega \ \textrm{non-zero regular}  \\ \textrm{pluricanonical form}}} \textrm{Sk}(X, \omega).
+\]
+\end{definition}
+
+\begin{theorem}[Baker-Nicaise] Assume $g(x) \geq 1$. Let $\mathfrak{X}$ be the  minimal snc-model of $X$. 
+\begin{itemize}
+ \item If $X$ is semistable then Sk$(X)$ = Sk$(\mathfrak{X})$;
+ \item In general, Sk$(X)$ is obtained from Sk$(\mathfrak{X})$ by deleting ``tails of rational curves'' .
+\end{itemize}
+ \end{theorem}
+\end{section}
